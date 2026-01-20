@@ -1,17 +1,14 @@
 package com.hospital.validation;
 
-import com.hospital.util.ErrorMessages;
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
-
+import jakarta.validation.*;
 import java.lang.annotation.*;
 
 @Documented
 @Constraint(validatedBy = RoleValidator.class)
-@Target({ ElementType.FIELD })
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidRole {
-    String message() default ErrorMessages.ROLE_INVALID;
+    String message() default "Invalid role";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

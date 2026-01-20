@@ -32,9 +32,6 @@ public class RegisterRequest {
             regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$", message = ErrorMessages.PASSWORD_INVALID)
     private String password;
 
-    @NotBlank(message = ErrorMessages.ROLE_REQUIRED)
-    @ValidRole
-    private String role; // String for custom validation
 
 
 }

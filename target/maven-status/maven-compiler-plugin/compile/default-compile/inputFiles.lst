@@ -2,6 +2,7 @@ F:\Spring_Project\hospital-management\src\main\java\com\hospital\controller\Auth
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\dto\AuthResponse.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\dto\LoginRequest.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\dto\RegisterRequest.java
+F:\Spring_Project\hospital-management\src\main\java\com\hospital\dto\StaffRegisterRequest.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\dto\UserResponse.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\entity\Role.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\entity\User.java
@@ -15,6 +16,7 @@ F:\Spring_Project\hospital-management\src\main\java\com\hospital\security\JwtFil
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\security\JwtUtil.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\security\SecurityConfig.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\service\AuthService.java
+F:\Spring_Project\hospital-management\src\main\java\com\hospital\service\impl\AuthServiceImpl.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\util\ApiErrorResponse.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\util\ApiResponse.java
 F:\Spring_Project\hospital-management\src\main\java\com\hospital\util\ErrorMessages.java

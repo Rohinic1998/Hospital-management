@@ -1,9 +1,6 @@
 package com.hospital.controller;
 
-import com.hospital.dto.AuthResponse;
-import com.hospital.dto.LoginRequest;
-import com.hospital.dto.RegisterRequest;
-import com.hospital.dto.UserResponse;
+import com.hospital.dto.*;
 import com.hospital.service.AuthService;
 import com.hospital.util.ApiResponse;
 import com.hospital.util.ErrorMessages;
@@ -12,7 +9,6 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDateTime;
 
 @RestController
@@ -25,18 +21,32 @@ public class AuthController {
         this.service = service;
     }
 
-    @PostMapping("/register")
+    @PostMapping("/register/patient")
     public ResponseEntity<ApiResponse<UserResponse>> register(@Valid @RequestBody RegisterRequest req) {
 
         ApiResponse<UserResponse> response = new ApiResponse<>();
         response.setSuccess(true);
         response.setMessage(SuccessMessage.USER_REGISTERED_SUCCESSFULLY);
-        response.setData(service.register(req));
+        response.setData(service.registerPatient(req));
         response.setStatus(HttpStatus.CREATED.value());
         response.setTimestamp(LocalDateTime.now());
         return new ResponseEntity<>(response, HttpStatus.CREATED);
 
     }
+    @PostMapping("/register/staff")
+    public ResponseEntity<ApiResponse<UserResponse>> registerStaff(
+            @Valid @RequestBody StaffRegisterRequest req) {
+
+        ApiResponse<UserResponse> response = new ApiResponse<>();
+        response.setSuccess(true);
+        response.setMessage("Staff Registered Successfully");
+        response.setData(service.registerStaff(req));
+        response.setStatus(HttpStatus.CREATED.value());
+        response.setTimestamp(LocalDateTime.now());
+
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
 
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest req) {
